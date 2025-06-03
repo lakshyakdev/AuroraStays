@@ -1,0 +1,118 @@
+<% layout("/layouts/boilerplate") %>
+<head>
+    <link rel="stylesheet" href="/css/starability-grow.css">
+</head>
+<body>
+    <div class="viewbody">
+        <h1>Title : <%= stay.title %></h1>
+        <div class="card indexcard" style="width: 35rem;">
+            <img src="<%= stay.image.url %>" class="card-img-top showimg" alt="<%= stay.image.url %>">
+            <div class="card-body">
+            <div class="stayView">
+                <div class="infoOfStay">
+                    <p class="card-title mt-5" style="width: 25rem;">
+                    <b>Owned by: </b><i><%= stay.owner.username %></i>
+                    </p>
+                    <p class="card-text" style="width: 25rem;">
+                        <b>Description :</b>  <%= stay.description %><br>
+                        <b>Location :</b> <%= stay.location %> <br>
+                        <b>Country :</b> <%= stay.country %> <br>  
+                    </p>
+                    <% if (currUser && currUser.username == stay.owner.username){ %>
+                <div class="buttonsinviews">
+                    <form action="/stays/<%= stay._id %>/edit" method="get">
+                    <button class="btn btn-dark offset-2 edit-btn">Edit</button>
+                    </form>
+                    <form action="/stays/<%= stay._id %>?_method=DELETE" method="post">
+                    <button class="btn btn-dark offset-2">Delete</button>
+                    </form> 
+                </div>     
+                <% } %> 
+                </div>
+                <form class="reservationOfstay" method="get" action="/stays/booking">
+                    <b>Price &#8377; <%= stay.price.toLocaleString("en-IN") %> for one night <br> </b>
+                    <div>
+                        <div class="card" style="width: 18rem;">
+                            
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <label class="form-label" for="check-in">CHECK-IN</label>
+                                    <input type="date" class="form-control" name="check-in" value="<%= new Date().toISOString().split('T')[0] %>">
+                                </li>
+                                <li class="list-group-item">
+                                    <label class="form-label" for="check-out">CHECK-OUT</label>
+                                    <input type="date" class="form-control" name="check-out" value="<%= new Date(Date.now()+2 * 24 * 60 * 60 * 1000).toISOString().split('T')[0] %>">
+                                </li>
+                                <li class="list-group-item">
+                                    <label class="form-label" for="guests">Guests</label>
+                                    <input type="number" class="form-control" name="guests" value="1">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="btn btn-large btn-outline-dark mt-3" href="">Click to reserve this property</button>
+                </form>
+            </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <% if (currUser){ %>
+    <hr class="offset-3">
+    <div class="offset-3">
+        <h3>Leave a Review</h3>
+        <form method="post" action="/stays/<%= stay._id %>/reviews" class="needs-validation" novalidate>
+            <div class="mb-3 mt-3">
+                <fieldset class="starability-grow" required>
+                    <legend>First rating:</legend>
+                    <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+                    <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                    <label for="first-rate1" title="Terrible">1 star</label>
+                    <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                    <label for="first-rate2" title="Not good">2 stars</label>
+                    <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                    <label for="first-rate3" title="Average">3 stars</label>
+                    <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                    <label for="first-rate4" title="Very good">4 stars</label>
+                    <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                    <label for="first-rate5" title="Amazing">5 stars</label>
+                    </fieldset>
+                <div class="invalid-feedback">
+                    Please enter valid rating
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="comment" class="form-label"><b>Comment</b></label>
+                <textarea name="review[comment]" rows="4" cols="40" class="margin-bottom form-control" required></textarea>
+                <div class="invalid-feedback">
+                    Please enter your comment
+                </div>
+            </div>
+            <button class="btn btn-outline-dark mb-3">Submit</button>   
+        </form>
+    </div> 
+    <% } %> 
+    <div class="offset-3">
+        <% if(stay.reviews.length>0) {%>
+        <hr>
+        <h3>Reviews</h3>
+        <div class="row">
+        <% for(review of stay.reviews){ %>
+            <div class="card col-4 mb-3 ms-3" style="width: 18rem;">
+            <div class="card-body">
+                <p class="card-title"><%= review.author.username %></p>
+                <p class="card-text starability-result" data-rating=<%= review.rating %>></p>
+                <p class="card-text"><%= review.comment %></p>
+                <p class="card-text"><%= review.createdAt %></p>
+                <% if(currUser && review.author.username == currUser.username){ %>
+                <form method="post" action="/stays/<%= stay._id %>/reviews/<%= review._id %>?_method=DELETE">
+                    <button class="btn btn-sm btn-outline-danger">Delete</button>
+                </form> 
+                <% } %>       
+            </div>
+            </div>
+        <% } %>
+        </div>
+        <% } %>
+    </div>
+</body>

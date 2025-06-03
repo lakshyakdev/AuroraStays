@@ -1,0 +1,51 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <h1>Add new Property</h1>
+    <form method="post" class="needs-validation" action="/stays" novalidate enctype="multipart/form-data">
+        <div class="row">
+            <div class="mb-3">
+                <label for="title" class="form-label">Enter Title</label>
+                <input type="text" name="stay[title]" placeholder="title" class="form-control" required>
+                <div class="invalid-feedback">
+                    Please add a title.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Enter Description</label>
+                <textarea class="form-control" type="text" name="stay[description]" placeholder="Description" rows="5" cols="15" required></textarea>
+                <div class="invalid-feedback">
+                    Please add description.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="url" class="form-label">Upload Image</label>
+                <input type="file" name="stay[image]" placeholder="image url" class="form-control">
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="price" class="form-label">Enter Price</label>
+                    <input type="number" name="stay[price]" placeholder="price" class="form-control" min="0" required>
+                    <div class="invalid-feedback">
+                    Please enter price
+                </div>
+                </div>
+                <div class="col-md-8">
+                    <label for="location" class="form-label">Enter location</label>
+                    <input type="text" name="stay[location]" placeholder="location" class="form-control" required>
+                    <div class="invalid-feedback">
+                    Please enter location
+                </div>
+                </div>  
+            </div>
+            <div class="mb-3">
+                <label for="country" class="form-label">Enter country</label>
+                <input type="text" name="stay[country]" placeholder="country" class="form-control" required>
+                <div class="invalid-feedback">
+                    Please enter country
+                </div>
+            </div>
+        </div>
+        <br> <br>
+        <button class="btn btn-dark add-btn" >Create</button>
+    </form>
+</body>

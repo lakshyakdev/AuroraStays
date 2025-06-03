@@ -1,0 +1,55 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <h1>Edit Property Details</h1>
+    <form method="post" action="/stays/<%= stay.id %>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
+        <div class="row">
+            <div class="mb-3">
+                <label for="title" class="form-label">Enter Title</label>
+                <input type="text" name="stay[title]" value="<%= stay.title %>" class="form-control" required>
+                <div class="invalid-feedback">
+                    Please add title.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Enter Description</label>
+                <textarea class="form-control" type="text" name="stay[description]"  rows="5" cols="15" required><%= stay.description %></textarea>
+                <div class="invalid-feedback">
+                    Please add description
+                </div>
+            </div>
+            <div class="mb-3">
+                <p>Original Image</p>
+                <a href="<%= stay.image.url %>" target="_blank" class="btn btn-outline-dark">Click to see original Image</a>
+            </div>
+            <div class="mb-3">
+                <label for="url" class="form-label">Upload New Image</label>
+                <input type="file" name="stay[image]" placeholder="image url" class="form-control">
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="price" class="form-label">Enter Price</label>
+                    <input type="number" name="stay[price]" value="<%= stay.price  %>" class="form-control" min="0" required>
+                    <div class="invalid-feedback">
+                    Please enter correct price
+                </div>
+                </div>
+                <div class="col-md-8">
+                    <label for="location" class="form-label">Enter location</label>
+                    <input type="text" name="stay[location]" value="<%= stay.location %>" class="form-control" required>
+                    <div class="invalid-feedback">
+                    Please enter location
+                </div>
+                </div>  
+            </div>
+            <div class="mb-3">
+                <label for="country" class="form-label">Enter country</label>
+                <input type="text" name="stay[country]" value="<%= stay.country %>" class="form-control" required>
+                <div class="invalid-feedback">
+                    Please enter country
+                </div>
+            </div>
+        </div>
+        <br> <br>
+        <button class="btn btn-dark add-btn" >Edit</button>
+    </form>
+</body>

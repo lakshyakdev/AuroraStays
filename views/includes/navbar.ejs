@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top" >
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><i class="fa-solid fa-person-walking-luggage"></i></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" href="/">Home</a>
+        <a class="nav-link" href="/stays">All stays</a>
+        <a class="nav-link" href="/stays/new">New Stay</a>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <% if(!currUser){ %>
+          <a class="nav-link btn btn-dark btnBlu" href="/signup">Signup</a>
+          <a class="nav-link btn btn-dark btnBlu" href="/login">Login</a>
+        <% } %>
+        <% if(currUser){ %>
+          <div class="user">
+            <i class="fa-solid fa-circle-user"></i>
+            <%= currUser.username %>
+          </div>
+          <div>
+            <a class="nav-link btn btn-dark btnBlu" href="/logout">Logout</a>
+          </div>  
+        <% } %>
+        </div>  
+    </div>
+  </div>
+</nav>

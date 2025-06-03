@@ -1,0 +1,178 @@
+body{ 
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+.navbar{
+    height: 5rem;
+}
+.fa-compass{
+    color: #fe424d;
+    font-size: 2rem;
+    margin-left: 2rem ;
+    margin-right: 2rem;
+}
+
+.nav-link{
+    color: #222222;
+    font-weight: 600;
+}
+
+footer{
+    display:flex;
+    background-color: #ebebeb;
+    flex-direction: column;
+    align-items: center;
+    height: 8rem;
+}
+
+.f-info-social a{
+    font-size: 1.5rem;
+    color: #222222;
+}
+
+.f-info-social i{
+    margin-right: 1.5rem;
+}
+
+
+.f-info-links a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+.f-info-brand{
+    font-size: 1.2rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.maincontent {
+    flex: 1;
+}
+
+.indexcardredirect{
+    text-decoration: none;
+    color: #222222;
+}
+
+.indexcard{
+    border: none;
+    margin-bottom: 3rem;
+}
+
+.card-img-top{
+    border-radius: 1rem;
+}
+
+.card-text p{
+    font-weight: 400;
+}
+
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+.add-btn,.edit-btn{
+    background-color: #fe424d;
+    border: none;
+}
+
+.viewbody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.showimg {
+    height: 35vh;
+    width: 60vh;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.buttonsinviews{
+    display: flex;
+    width: 17vh;
+    justify-content: space-between;
+}
+
+.margin{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fa-person-walking-luggage{
+    color: blue;
+    font-size: 2rem;
+    margin-left: 2rem ;
+    margin-right: 2rem;
+}
+
+.btnBlu{
+    background-color: blue;
+    color: white;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    margin-top: 0.5rem;
+}
+
+.fa-circle-user{
+    color: #fe424d;
+    font-size: 2rem;
+    margin-left: 2rem ;
+    margin-right: 2rem;
+}
+
+.user{
+    display: flex;
+    flex-direction: column;
+}
+
+.stayView{
+    display: flex;
+    justify-content: space-between;
+}
+
+.reservationOfstay{
+    margin-left: 3em;
+}
+
+.homepageImage{
+    background: url(https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=2580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) center/cover no-repeat;
+    height: 80vh; 
+    color: black;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+}
+
+
+.homepageImageText {
+    text-align: center;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 1.5rem 2rem;
+    border-radius: 0.2rem;
+    display: inline-block;
+}
+
+.homepageImageText>p{
+    font-size: larger;
+    font-weight: 400;
+}

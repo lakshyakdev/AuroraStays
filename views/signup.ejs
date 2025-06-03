@@ -1,0 +1,33 @@
+<%- layout("/layouts/boilerplate.ejs") %>
+<body>
+    <h1>Sign up to AuroraStays</h1>
+    <form method="post" class="needs-validation" action="/signup" novalidate>
+        <div class="row">
+            <div class="mb-3">
+                <label for="username" class="form-label">Enter Username</label>
+                <input type="text" name="username" class="form-control" required>
+                <div class="invalid-feedback">
+                    Please Enter a valid username.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Enter your email</label>
+                <input type="text" name="email" class="form-control">
+                <div class="invalid-feedback">
+                    Please enter valid email
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Enter strong password</label>
+                <input type="password" name="password"class="form-control" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+        </div>
+        <br>
+        <button class="btn btn-dark add-btn" >Sign Up</button>
+    </form>
+</body>
+
+</body>
