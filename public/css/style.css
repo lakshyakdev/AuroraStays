@@ -2,8 +2,81 @@ body{
   font-family: "Plus Jakarta Sans", sans-serif;
   font-optical-sizing: auto;
 }
+
+@media (max-width: 767.98px) {  
+    .navbar-nav .nav-link {         
+        padding: 0.5rem 1rem;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .user {
+        padding: 0.5rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .user i {
+        margin: 0 0 0.25rem 0;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .viewbody {
+        display: block !important;
+        align-items: unset !important;
+        margin-top: 1rem !important;
+    }
+
+    .card.indexcard {
+        width: 100% !important;
+        max-width: none !important;
+    }
+    
+    .showimg {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 300px;
+        object-fit: cover;
+    }
+    
+    .card-title, .card-text {
+        width: 100% !important;
+        max-width: none !important;
+    }
+    
+    .stayView {
+        display: block !important;
+        justify-content: unset !important;
+    }
+    
+    .reservationOfstay {
+        margin-left: 0 !important;
+        margin-top: 2rem;
+    }
+    
+    .buttonsinviews {
+        width: 100% !important;
+        justify-content: flex-start !important;
+        gap: 1rem;
+    }
+    
+    .offset-3 {
+        margin-left: 0 !important;
+    }
+    
+    .row .card.col-4 {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-bottom: 1rem;
+    }
+}
+
 .navbar{
-    height: 5rem;
+    height: auto;
+    min-height: 5rem;
 }
 .fa-compass{
     color: #fe424d;
@@ -51,6 +124,7 @@ footer{
 body {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     min-height: 100vh;
 }
 

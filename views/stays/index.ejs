@@ -1,6 +1,7 @@
 <% layout("/layouts/boilerplate") %>
 <body>
-    <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-1">
+    <div class="container mt-3">
+        <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-1">
         <% for(list of allstayings) { %>
     <div class="card col indexcard" style="width: 20rem;">
         <a class="indexcardredirect" href="/stays/<%= list._id %>">
@@ -16,4 +17,5 @@
     </div>
     <% } %>
     </div>     
+    </div>   
 </body>
