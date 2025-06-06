@@ -23,6 +23,7 @@ router
 router.get("/booking",isloggedin,stayConnector.booking);
 router.get("/terms",stayConnector.terms);
 router.get("/privacy",stayConnector.privacy);
+router.get("/search",wrapAsync(stayConnector.search));
 
 router
     .route("/:id")

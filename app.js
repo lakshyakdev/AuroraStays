@@ -90,24 +90,15 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get("/",(req,res)=>{
-    res.render("./stays/homepage.ejs");
-})
-
 app.get("/check",(req,res)=>{
     console.log(res.locals.currUser);
     res.send("check console");
 })
-// app.get("/register",async (req,res)=>{
-//     const newUser = {
-//         email : "demouser@gmail.com",
-//         username: "Demo User",
-//     }
 
-//     let register = await User.register(newUser,"abcd");
-//     console.log(register);
-//     res.send("successfull");
-// })
+app.get("/",(req,res)=>{
+    res.render("./stays/homepage.ejs");
+})
+
 
 const userRouter = require('./routes/user.js');
 app.use("/",userRouter);

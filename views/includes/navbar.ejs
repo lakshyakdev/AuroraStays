@@ -9,6 +9,12 @@
         <a class="nav-link active" href="/">Home</a>
         <a class="nav-link" href="/stays">All stays</a>
         <a class="nav-link" href="/stays/new">New Stay</a>
+       
+      </div>
+      <div class="navbar-nav searchBar">
+        <input type="text" class="nav-link searchBarInput" placeholder="Search Stays">
+        <button class="searchBarButton btn btn-dark">Search</button>
+        <div class="resultBox"></div>
       </div>
       <div class="navbar-nav ms-auto">
         <% if(!currUser){ %>

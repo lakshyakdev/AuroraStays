@@ -81,3 +81,23 @@ module.exports.privacy = (req,res)=>{
 module.exports.terms = (req,res)=>{
     res.render("./Privacy&Terms/Terms.ejs");
 }
+
+module.exports.search = async (req, res) => {
+  try {
+    const query = req.query.q;
+
+    if (!query || query.trim() === '') {
+      return res.json([]);
+    }
+    
+    const stays = await Stay.find({ 
+      title: { $regex: query.trim(), $options: "i" } 
+    });
+    
+    res.json(stays);
+  } catch (error) {
+    console.error('Search error:', error);
+    res.status(500).json({ error: 'Search failed' });
+  }
+
+};
