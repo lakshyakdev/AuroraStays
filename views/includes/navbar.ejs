@@ -12,8 +12,10 @@
        
       </div>
       <div class="navbar-nav searchBar">
-        <input type="text" class="nav-link searchBarInput" placeholder="Search Stays">
-        <button class="searchBarButton btn btn-dark">Search</button>
+        <form method="get" action="/stays/search" class="searchBarForm">
+          <input type="text" name="staysList" class="nav-link searchBarInput" placeholder="Search Stays">
+          <button class="searchBarButton btn btn-dark">Search</button>
+        </form>
         <div class="resultBox"></div>
       </div>
       <div class="navbar-nav ms-auto">

@@ -287,9 +287,20 @@ body {
 }
 
 .search-result:hover {
-  background-color: #f5f5f5;
+  background-color: #f8f9fa;
 }
 
 .searchBar {
   position: relative;
+}
+
+.search-result-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.search-result-link:hover {
+  text-decoration: none;
+  color: inherit;
 }

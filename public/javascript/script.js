@@ -55,11 +55,3 @@ searchBar.addEventListener("input", (e) => {
       });
   },200);
 });
-
-document.querySelector(".searchBarButton").addEventListener("click", () => {
-  const query = searchBar.value.trim();
-  if (query) {
-    // Trigger the same search logic
-    searchBar.dispatchEvent(new Event('input'));
-  }
-});

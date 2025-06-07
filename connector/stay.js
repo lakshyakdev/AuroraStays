@@ -84,10 +84,16 @@ module.exports.terms = (req,res)=>{
 
 module.exports.search = async (req, res) => {
   try {
-    const query = req.query.q;
-
+    let query = req.query.q;
+    
     if (!query || query.trim() === '') {
-      return res.json([]);
+        query = req.query.staysList;
+        if(query){
+            const stays = await Stay.find({ 
+            title: { $regex: query.trim(), $options: "i" }}) ;
+            return res.render("./stays/searchList.ejs",{stays});
+        }
+        else return res.json([]);
     }
     
     const stays = await Stay.find({ 
