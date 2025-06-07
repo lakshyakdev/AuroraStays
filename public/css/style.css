@@ -21,6 +21,16 @@ body{
         margin: 0 0 0.25rem 0;
         align-items: center;
     }
+
+    .searchBarForm{
+        display: block;
+    }
+    .searchBarInput{
+        width: 100%;
+    }
+    .searchBarButton{
+        width: 100%s;
+    }
 }
 
 @media (max-width: 768px) {
